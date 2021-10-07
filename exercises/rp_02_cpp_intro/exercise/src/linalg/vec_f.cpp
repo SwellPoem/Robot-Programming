@@ -81,9 +81,6 @@ VecF VecF::operator - (const VecF& other) const {
 VecF  VecF::operator* (float f) const {
   VecF returned(*this);
   // TODO: fillme
-  for(int i=0; i<dim; i++) {
-    
-  }
   return returned;
 }
 
