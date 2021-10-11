@@ -1,0 +1,10 @@
+add_executable(binary_tree_int_test
+  binary_tree_int_test.cpp)
+
+add_executable(binary_tree_template_no_using_test
+  binary_tree_template_no_using_test.cpp)
+
+binary_tree_template_no_using_test.cpp
+binary_tree_template_int_test.cpp  binary_tree_template_test.cpp
+binary_tree_template_mys_test.cpp
+template_functions template_functions.cpp)
