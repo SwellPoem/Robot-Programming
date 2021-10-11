@@ -66,7 +66,16 @@ const float& MatF::at(int r, int c) const {
 //op =, deep copy
 MatF& MatF::operator =(const MatF& other) {
   // TODO: fillme
-
+  if(dimension)
+    delete [] v;
+  rows = other.rows;
+  cols = other.cols;
+  dimension = rows*cols;
+  if( ! dimension)
+    return *this;
+  v = new float[dimension];
+  for(int i=0; i<dimension; ++i)
+    v[i] = other.v[i];
   return *this;
 }
 
@@ -76,7 +85,8 @@ MatF MatF::operator + (const MatF& other) const {
   MatF returned (*this);
 
   // TODO: fillme
-
+  for(int i=0; i<dimension; ++i)
+    returned.v[i]+=other.v[i];
   return returned;
 }
 
@@ -84,13 +94,18 @@ MatF MatF::operator + (const MatF& other) const {
 MatF MatF::operator - (const MatF& other) const {
 
     // TODO: fillme
-
+    for(int i=0; i<dimension; ++i)
+    returned.v[i]-=other.v[i];
+  return returned;
 }  
 
 
 // returns this*f
 MatF  MatF::operator* (float f) const {
   // TODO: fillme
+  for(int i=0; i<dimension; ++i)
+    returned.v[i]*=f;
+  return returned;
 }
 
 // returns this* other
@@ -98,6 +113,12 @@ VecF  MatF::operator* (const VecF& other) const {
   assert(other.dim==cols && "dim mismatch");
   VecF returned (rows);
   // TODO: fillme
+  for(int r=0; r<rows; ++r) {
+    float acc=0.f;
+    for(int c=0; c<cols; ++c)
+      acc += at(r, c) * other.at(c);
+    returned.at(r) = acc;
+  }
   return returned;
 }
 
@@ -106,6 +127,14 @@ MatF  MatF::operator* (const MatF& other) const {
   assert(cols==other.rows && "dimension mismatch");
   MatF returned(rows, other.cols);
   //TODO: fillme
+  for(int dc=0; dc<other.cols; ++dc) {
+    for(int r=0; <rows; ++r) {
+      float& dest=returned.at(r, dc);
+      dest = 0.f;
+      for(int c=0; c<cols; ++c)
+        dest += at(r, c) * other.at(c, dc);
+    }
+  }
   return returned;
 }
 
