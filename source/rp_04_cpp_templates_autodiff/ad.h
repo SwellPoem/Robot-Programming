@@ -88,7 +88,7 @@ inline double normalizeAngle(const double& angle_) {
 template <typename T>
 class DualValue_ {
 public:
-  using BaseType=T;
+  using Scalar=T;
   T value;
   T derivative;
 
@@ -96,19 +96,20 @@ public:
     return value;
   }
 
-  DualValue_() {
-    value = 0, derivative = 0;
-  }
+  DualValue_() :
+    value = 0, 
+    derivative = 0
+  {}
 
-  DualValue_(const T& v) {
+  DualValue_(const Scalar& v) :
     value = v;
-    derivative = 0;
-  }
+    derivative = 0
+  {}
 
-  DualValue_(const T& v, const T& d) {
+  DualValue_(const T& v, const T& d) :
     value = v;
     derivative = d;
-  }
+  {}
 
   inline DualValue_& operator=(const T& v) {
     value = v;
