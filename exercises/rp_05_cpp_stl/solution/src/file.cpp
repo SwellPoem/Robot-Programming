@@ -1,4 +1,0 @@
-namespace MyNamespace {
-  class C{
-  };
-}
