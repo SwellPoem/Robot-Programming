@@ -1,1 +1,0 @@
-add_executable(template_functions_test template_functions_test.cpp)
