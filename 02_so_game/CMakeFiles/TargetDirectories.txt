@@ -1,0 +1,3 @@
+/home/vale/dev/Robot-Programming/02_so_game/CMakeFiles/so_game.dir
+/home/vale/dev/Robot-Programming/02_so_game/CMakeFiles/edit_cache.dir
+/home/vale/dev/Robot-Programming/02_so_game/CMakeFiles/rebuild_cache.dir
