@@ -4,7 +4,7 @@
 add_library(utils SHARED
     
     blob.cpp
-    deserialize.cpp
+    deserializer.cpp
     id_context.cpp
     id_placeholder.cpp
     identifiable.cpp

@@ -29,3 +29,25 @@ add_subdirectory(src)
 # TODO do the same for executables
 # DONE
 add_subdirectory(executable)
+
+add_executable(tutto
+  executables/many_object_in_stack_example.cpp
+  src/utils/property_eigen.cpp
+  src/utils/blob.cpp
+  src/utils/id_context.cpp
+  src/utils/serializer.cpp
+  src/utils/property.cpp
+  src/utils/property_identifiable.cpp
+  src/utils/deserializer.cpp
+  src/utils/property_container.cpp
+  src/utils/property_container_manager.cpp
+  src/utils/serializable.cpp
+  src/utils/serialization_context.cpp
+  src/utils/id_placeholder.cpp
+  src/utils/identifiable.cpp
+  src/utils/object_data.cpp
+  src/messages/pose_message.cpp
+  src/messages/base_sensor_message.cpp
+  src/messages/odometry_message.cpp
+)
+
