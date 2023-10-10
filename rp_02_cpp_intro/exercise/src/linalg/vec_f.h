@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 
+//VECTOR OF FLOATING ELEMENTS
 struct VecF {
   int dim; // guess what
   float* v; // elements to the data

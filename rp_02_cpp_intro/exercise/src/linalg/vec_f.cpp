@@ -69,10 +69,14 @@ VecF VecF::operator + (const VecF& other) const {
   return returned;
 }
 
+//returns the sum this - other
 VecF VecF::operator - (const VecF& other) const {
   assert(other.dim==dim && "dim mismatch");
   VecF returned(*this);
   // TODO: fillme
+  //DONE
+  for (int i=0; i<dim; ++i)
+    returned.v[i]-=other.v[i];
   return returned;
 }
 
@@ -81,6 +85,9 @@ VecF VecF::operator - (const VecF& other) const {
 VecF  VecF::operator* (float f) const {
   VecF returned(*this);
   // TODO: fillme
+  //DONE
+  for (int i=0; i<dim; ++i)
+    returned.v[i]*=f;
   return returned;
 }
 
@@ -89,6 +96,9 @@ VecF  VecF::operator* (float f) const {
 float VecF::operator*(const VecF& other) const {
   float acc=0.f;
   // TODO: fillme
+  //DONE
+  for (int i=0; i<dim; ++i)
+    acc+=v[i]*other.at(i);
   return acc;
 }
 
